@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <PackageId>KhaosCode.Flow</PackageId>
+    <Description>Implementation of state-machine workflow orchestration with branching and transitions.</Description>
+    <PackageTags>flow;workflow;state-machine;orchestration</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Local project references for development -->
+    <FlowAbstractionsPath Condition="'$(FlowAbstractionsPath)' == ''">..\..\..\Khaos.Flow.Abstractions\src\Khaos.Flow.Abstractions\Khaos.Flow.Abstractions.csproj</FlowAbstractionsPath>
+    <UseLocalFlowAbstractions Condition="'$(UseLocalFlowAbstractions)' == '' AND Exists('$(FlowAbstractionsPath)')">true</UseLocalFlowAbstractions>
+    <UseLocalFlowAbstractions Condition="'$(UseLocalFlowAbstractions)' == ''">false</UseLocalFlowAbstractions>
+    
+    <PipelineAbstractionsPath Condition="'$(PipelineAbstractionsPath)' == ''">..\..\..\Khaos.Pipeline.Abstractions\src\Khaos.Pipeline.Abstractions\Khaos.Pipeline.Abstractions.csproj</PipelineAbstractionsPath>
+    <UseLocalPipelineAbstractions Condition="'$(UseLocalPipelineAbstractions)' == '' AND Exists('$(PipelineAbstractionsPath)')">true</UseLocalPipelineAbstractions>
+    <UseLocalPipelineAbstractions Condition="'$(UseLocalPipelineAbstractions)' == ''">false</UseLocalPipelineAbstractions>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="" Link="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <!-- Flow Abstractions -->
+  <Choose>
+    <When Condition="'$(UseLocalFlowAbstractions)' == 'true'">
+      <ItemGroup>
+        <ProjectReference Include="$(FlowAbstractionsPath)" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="KhaosCode.Flow.Abstractions" Version="1.0.0" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <!-- Pipeline Abstractions (for adapter) -->
+  <Choose>
+    <When Condition="'$(UseLocalPipelineAbstractions)' == 'true'">
+      <ItemGroup>
+        <ProjectReference Include="$(PipelineAbstractionsPath)" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="KhaosCode.Pipeline.Abstractions" Version="1.0.0" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+</Project>

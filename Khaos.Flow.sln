@@ -1,0 +1,33 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Khaos.Flow", "src\Khaos.Flow\Khaos.Flow.csproj", "{11223344-5566-7788-99AA-BBCCDDEEFF00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Khaos.Flow.Tests", "tests\Khaos.Flow.Tests\Khaos.Flow.Tests.csproj", "{22334455-6677-8899-AABB-CCDDEEFF0011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{33445566-7788-99AA-BBCC-DDEEFF001122}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{44556677-8899-AABB-CCDD-EEFF00112233}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11223344-5566-7788-99AA-BBCCDDEEFF00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11223344-5566-7788-99AA-BBCCDDEEFF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11223344-5566-7788-99AA-BBCCDDEEFF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11223344-5566-7788-99AA-BBCCDDEEFF00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22334455-6677-8899-AABB-CCDDEEFF0011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22334455-6677-8899-AABB-CCDDEEFF0011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22334455-6677-8899-AABB-CCDDEEFF0011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22334455-6677-8899-AABB-CCDDEEFF0011}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11223344-5566-7788-99AA-BBCCDDEEFF00} = {33445566-7788-99AA-BBCC-DDEEFF001122}
+		{22334455-6677-8899-AABB-CCDDEEFF0011} = {44556677-8899-AABB-CCDD-EEFF00112233}
+	EndGlobalSection
+EndGlobal
