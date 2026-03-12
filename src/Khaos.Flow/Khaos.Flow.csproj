@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
-    <PackageId>KhaosCode.Flow</PackageId>
+    <PackageId>KhaosKode.Flow</PackageId>
     <Description>Implementation of state-machine workflow orchestration with branching and transitions.</Description>
     <PackageTags>flow;workflow;state-machine;orchestration</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -41,7 +41,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="KhaosCode.Flow.Abstractions" Version="1.0.0" />
+        <PackageReference Include="KhaosKode.Flow.Abstractions" Version="1.0.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -55,7 +55,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="KhaosCode.Pipeline.Abstractions" Version="1.0.0" />
+        <PackageReference Include="KhaosKode.Pipeline.Abstractions" Version="1.0.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>
